@@ -58,6 +58,12 @@ namespace XamarinStore.iOS
 			navigation.PushViewController (basketVc, true);
 		}
 
+		public void ShowProductImages (List<UIImage> images)
+		{
+			var productImage = new ProductImageViewController (images);
+			navigation.PushViewController (productImage, true);
+		}
+
 		public void ShowLogin ()
 		{
 			var loginVc = new LoginViewController ();

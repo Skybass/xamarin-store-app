@@ -146,6 +146,14 @@ namespace XamarinStore.iOS
 
 			TableView.Source = new ProductDetailPageSource (tableItems.ToArray ());
 			TableView.ReloadData ();
+
+			UITapGestureRecognizer tapRecognizer = new UITapGestureRecognizer() {
+				NumberOfTapsRequired = 1,
+			};
+			tapRecognizer.AddTarget((sender) => {
+				AppDelegate.Shared.ShowProductImages (imageView.Images);
+			});
+			TableView.TableHeaderView.AddGestureRecognizer(tapRecognizer);
 		}
 
 
